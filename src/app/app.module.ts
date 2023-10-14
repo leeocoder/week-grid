@@ -8,6 +8,7 @@ import { DiasDeTreinoComponent } from './dias-da-semana/dias-de-treino/dias-de-t
 import { HorariosDeTreinoComponent } from './dias-da-semana/horarios-de-treino/horarios-de-treino.component';
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PrimeNgModule } from "./primeng.module";
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     InputSwitchModule,
     ReactiveFormsModule,FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PrimeNgModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,8 @@
-<p>dias-de-treino works!</p>
+<section>
+    <form [formGroup]="hourSlotSelectorForm">
+        <ng-container *ngFor="let day of week">
+          <div [formGroupName]="weekDays">
+                      <p-button formControlName="day"></p-button>
+      </ng-container>
+  </form>
+</section>
