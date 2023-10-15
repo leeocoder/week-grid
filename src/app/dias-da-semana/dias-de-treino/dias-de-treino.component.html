@@ -1,8 +1,16 @@
-<section>
-    <form [formGroup]="hourSlotSelectorForm">
-        <ng-container *ngFor="let day of week">
-          <div [formGroupName]="weekDays">
-                      <p-button formControlName="day"></p-button>
-      </ng-container>
-  </form>
-</section>
+<form [formGroup]="service.formulario">
+    <p-selectButton
+      [options]="week"
+      formArrayName="agendaForm"
+      [multiple]="true"
+    ></p-selectButton>
+  <ng-container
+    *ngFor="let day of service.showChosenDays.controls; let index = index"
+  >
+    <div [formGroupName]="index">
+      <p-button formArrayName="day">{{ day.get("day")?.value }}</p-button>
+    </div>
+  </ng-container>
+  <button (click)="checkDays()">CHECK DAYS</button>
+  <div>{{ service.showChosenDays }}</div>
+</form>
