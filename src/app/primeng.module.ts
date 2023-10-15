@@ -32,7 +32,6 @@ import { DeferModule } from 'primeng/defer';
 import { DialogModule } from 'primeng/dialog';
 import { DividerModule } from 'primeng/divider';
 import { DockModule } from 'primeng/dock';
-import { DragDropModule } from 'primeng/dragdrop';
 import { DropdownModule } from 'primeng/dropdown';
 import { DynamicDialogModule } from 'primeng/dynamicdialog';
 import { EditorModule } from 'primeng/editor';
@@ -55,7 +54,6 @@ import { MenuModule } from 'primeng/menu';
 import { MenubarModule } from 'primeng/menubar';
 import { MessagesModule } from 'primeng/messages';
 import { MultiSelectModule } from 'primeng/multiselect';
-import { OrderListModule } from 'primeng/orderlist';
 import { OrganizationChartModule } from 'primeng/organizationchart';
 import { OverlayModule } from 'primeng/overlay';
 import { OverlayPanelModule } from 'primeng/overlaypanel';
@@ -138,7 +136,6 @@ import { RouterModule } from "@angular/router";
     DialogModule,
     DividerModule,
     DockModule,
-    DragDropModule,
     DropdownModule,
     DynamicDialogModule,
     EditorModule,
@@ -166,7 +163,6 @@ import { RouterModule } from "@angular/router";
     MenuModule,
     MessagesModule,
     MultiSelectModule,
-    OrderListModule,
     OrganizationChartModule,
     OverlayModule,
     OverlayPanelModule,

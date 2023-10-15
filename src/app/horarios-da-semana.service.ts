@@ -20,8 +20,12 @@ export class HorariosDaSemanaService {
   }
 
   setDays(event: SelectButtonOptionClickEvent) {
-    this.showChosenDays.push(this.setAgendaForm(event.option));
-    console.log(this.showChosenDays.value);
+    const index = this.findDayIndexBy('name', event.option.label, this.showChosenDays);
+    if(index < 0) {
+      this.showChosenDays.push(this.setAgendaForm(event.option));
+    } else {
+      this.showChosenDays.removeAt(index);
+    }
   }
 
   setAgendaForm(data: any) {
@@ -32,9 +36,9 @@ export class HorariosDaSemanaService {
     });
   }
 
-  private findDayIndexById(id: number): number {
-    return this.showChosenDays.controls.findIndex(
-      (control) => control.get('days')?.value === id
+  private findDayIndexBy(controlName: string, type: unknown, formArray: FormArray): number {
+    return formArray.controls.findIndex(
+      (control) => control.get(controlName)?.value === type
     );
   }
 }
