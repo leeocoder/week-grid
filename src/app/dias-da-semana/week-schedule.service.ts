@@ -10,8 +10,7 @@ export class WeekScheduleService {
   private _weekScheduleForm: FormGroup = new FormGroup({});
   private selectedWeekDays: SelectParamsInterface[] = [];
 
-  constructor(private _formBuilder: FormBuilder) {
-  }
+  constructor(private _formBuilder: FormBuilder) { }
 
   get weekScheduleForm(): FormGroup {
     return this._weekScheduleForm;
@@ -36,7 +35,7 @@ export class WeekScheduleService {
       id: [id],
       name: [name],
       schedule: this._formBuilder.array([
-        this.createSchedule()
+        this.hoursFormGroup()
       ])
     });
   }
@@ -52,7 +51,7 @@ export class WeekScheduleService {
     });
   }
 
-  private createSchedule(): FormGroup {
+  private hoursFormGroup(): FormGroup {
     return this._formBuilder.group({
       time: ['']
     });
