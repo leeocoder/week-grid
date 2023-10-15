@@ -26,6 +26,11 @@ export class HorariosDaSemanaService {
     } else {
       this.days.removeAt(index);
     }
+    this.sortBy('id')
+  }
+
+  sortBy(FieldName: string) {
+    this.days.setValue(this.days.value.sort((a:any, b:any) => a[FieldName] - b[FieldName]));
   }
 
   setAgendaForm(data: any) {
