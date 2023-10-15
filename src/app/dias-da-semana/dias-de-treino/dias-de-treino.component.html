@@ -6,13 +6,15 @@
       optionValue="label"
       (onOptionClick)="service.setDays($event)"
     ></p-selectButton>
-  <!-- <ng-container
-    *ngFor="let day of service.showChosenDays.controls; let index = index"
-  >
-    <div [formGroupName]="index">
-      <p-button formArrayName="name">{{ day.get("name")?.value }}</p-button>
+    <div formArrayName="days">
+      <ng-container
+      *ngFor="let day of service.days.controls; let index = index"
+    >
+      <div [formGroupName]="index">
+        <p>{{ day.get("name")?.value }}</p>
+      </div>
+    </ng-container>
     </div>
-  </ng-container> -->
   <button (click)="checkDays()">CHECK DAYS</button>
-  <div>{{ service.showChosenDays.value | json }}</div>
+  <div>{{ service.days.value | json }}</div>
 </form>

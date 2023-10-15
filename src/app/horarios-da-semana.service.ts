@@ -15,16 +15,16 @@ export class HorariosDaSemanaService {
     });
   }
 
-  get showChosenDays() {
+  get days() {
     return this.formulario.get('days') as FormArray;
   }
 
   setDays(event: SelectButtonOptionClickEvent) {
-    const index = this.findDayIndexBy('name', event.option.label, this.showChosenDays);
+    const index = this.findDayIndexBy('name', event.option.label, this.days);
     if(index < 0) {
-      this.showChosenDays.push(this.setAgendaForm(event.option));
+      this.days.push(this.setAgendaForm(event.option));
     } else {
-      this.showChosenDays.removeAt(index);
+      this.days.removeAt(index);
     }
   }
 

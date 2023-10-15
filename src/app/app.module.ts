@@ -9,6 +9,7 @@ import { HorariosDeTreinoComponent } from './dias-da-semana/horarios-de-treino/h
 import { InputSwitchModule } from 'primeng/inputswitch';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SelectButtonModule } from 'primeng/selectbutton';
+import { CalendarModule } from 'primeng/calendar';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SelectButtonModule } from 'primeng/selectbutton';
     InputSwitchModule,
     ReactiveFormsModule,FormsModule,
     SelectButtonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CalendarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

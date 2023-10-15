@@ -16,6 +16,6 @@ export class DiasDeTreinoComponent implements OnInit {
   ngOnInit() {}
 
   checkDays() {
-    console.log(this.service.showChosenDays);
+    console.log(this.service.days);
   }
 }
