@@ -1,5 +1,6 @@
+import { WeekScheduleService } from './week-schedule.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup } from '@angular/forms';
 import { InputSwitchOnChangeEvent } from 'primeng/inputswitch';
 
 @Component({
@@ -9,13 +10,22 @@ import { InputSwitchOnChangeEvent } from 'primeng/inputswitch';
 })
 export class DiasDaSemanaComponent implements OnInit{
   form: FormGroup = new FormGroup({});
-  constructor (private _fb: FormBuilder) {}
+  constructor (private _fb: FormBuilder, private weekScheduleService: WeekScheduleService) {}
 
   ngOnInit(): void {
-    this.form = this._fb.group({
-      customizar_dias: [],
-      customizar_horario: []
-    });
+    this.weekScheduleService.createForm();
+  }
+
+  get diasDaSemanaForm (): FormGroup {
+    return this.weekScheduleService.weekScheduleForm
+  }
+
+  get dias (): FormArray {
+    return this.weekScheduleService.daysOfWeek
+  }
+
+  addDay(): void {
+    this.weekScheduleService.createDay(2, 'Segunda-Feira');
   }
 
   updateStatusDias(event: InputSwitchOnChangeEvent) {}
