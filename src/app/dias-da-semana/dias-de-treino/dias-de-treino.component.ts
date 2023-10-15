@@ -9,19 +9,11 @@ import { HorariosDaSemanaService } from 'src/app/horarios-da-semana.service';
   styleUrls: ['./dias-de-treino.component.scss'],
 })
 export class DiasDeTreinoComponent implements OnInit {
-  week: SelectParamsInterface[] = [];
+  week: SelectParamsInterface[] = weekDays;
 
   constructor(public service: HorariosDaSemanaService) {}
 
-  ngOnInit() {
-    this.populateWeek();
-  }
-
-  populateWeek(): void {
-    Object.values(weekDays).forEach((item) => {
-      this.week.push(item);
-    });
-  }
+  ngOnInit() {}
 
   checkDays() {
     console.log(this.service.showChosenDays);
