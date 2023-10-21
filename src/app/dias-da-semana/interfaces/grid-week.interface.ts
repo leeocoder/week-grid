@@ -1,3 +1,5 @@
+import { GridTrainingHoraryInterface } from "./grid-training-horary.interface";
+
 export interface GridWeekInterface {
   sunday: boolean;
   monday: boolean;
@@ -8,11 +10,5 @@ export interface GridWeekInterface {
   saturday: boolean;
   custom_times: true;
   custom_weekdays: true;
-  grid_training_horary: GridTrainingHorary[];
-}
-
-export interface GridTrainingHorary {
-  grid_training_id: number;
-  horary: string;
-  weekday: number;
+  grid_training_horary: GridTrainingHoraryInterface[];
 }

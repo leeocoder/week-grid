@@ -2,8 +2,10 @@
   <ng-container *ngFor="let day of dias.controls; let index = index">
     {{day.value | json}}
       <p>{{day.get('nome')?.value}}</p>
-      <button (click)="addDay()"> add day</button>
+      <button (click)="addDay(1, 'Domingo')"> add day</button>
+      <button (click)="getValue()">Value</button>
   </ng-container>
+
 </form>
 
 <app-dias-de-treino></app-dias-de-treino>

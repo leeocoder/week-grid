@@ -13,7 +13,7 @@ export class DiasDaSemanaComponent implements OnInit{
   constructor (private _fb: FormBuilder, private weekScheduleService: WeekScheduleService) {}
 
   ngOnInit(): void {
-    this.weekScheduleService.createForm();
+    this.weekScheduleService.setUpForm();
   }
 
   get diasDaSemanaForm (): FormGroup {
@@ -24,8 +24,12 @@ export class DiasDaSemanaComponent implements OnInit{
     return this.weekScheduleService.daysOfWeek
   }
 
-  addDay(): void {
-    this.weekScheduleService.createDay(2, 'Segunda-Feira');
+  addDay(weekDay: number, dayName: string): void {
+    this.weekScheduleService.createDay(weekDay, dayName);
+  }
+
+  getValue(): void {
+    console.log(this.weekScheduleService.getGridTrainingHoraryValue());
   }
 
   updateStatusDias(event: InputSwitchOnChangeEvent) {}
