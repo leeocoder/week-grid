@@ -1,3 +1,4 @@
+import { ToggleButtonModule } from 'primeng/togglebutton';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -15,10 +16,11 @@ import { WeekScheduleService } from './dias-da-semana/week-schedule.service';
     AppComponent,
     DiasDaSemanaComponent,
     DiasDeTreinoComponent,
-    HorariosDeTreinoComponent
+    HorariosDeTreinoComponent,
   ],
   imports: [
     BrowserModule,
+    ToggleButtonModule,
     InputSwitchModule,
     ReactiveFormsModule,FormsModule,
     AppRoutingModule

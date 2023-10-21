@@ -1,1 +1,10 @@
-<p>dias-de-treino works!</p>
+<ng-container *ngFor="let day of days">
+  <p-toggleButton
+  onLabel={{day.dayName}}
+  offLabel={{day.dayName}}
+  [style]="{ width: '10em' }"
+  [disabled]="!day.hasService"
+  (onChange)="onSelectDay(day.id, day.label)">
+</p-toggleButton>
+
+</ng-container>
